@@ -5,6 +5,14 @@ CP := cp
 
 .DEFAULT: build
 
+sdk-menuconfig:
+	$(MAKE) -C sdk/high-power-core/asdk menuconfig
+
+sdk-menuconfig-high: sdk-menuconfig
+
+sdk-menuconfig-low:
+	$(MAKE) -C sdk/low-power-core/asdk menuconfig
+
 build:
 	$(MAKE) -C sdk/low-power-core all
 	$(MAKE) -C sdk/high-power-core all

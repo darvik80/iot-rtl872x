@@ -14,6 +14,11 @@
 /*For MP mode setting*/
 //#define SUPPORT_MP_MODE		1
 
+#define ATVER_1 1 // For First AT command
+#define ATVER_2 2 // For UART Module AT command
+
+#define ATCMD_VER ATVER_2
+
 /**
  * For AT cmd Log service configurations
  */
@@ -409,10 +414,6 @@
 #define FATFS_DISK_SD	1
 #endif
 
-#define ATVER_1 1 // For First AT command
-#define ATVER_2 2 // For UART Module AT command
-
-
 /* For UART Module AT command example */
 #define CONFIG_EXAMPLE_UART_ATCMD	1
 #if CONFIG_EXAMPLE_UART_ATCMD
@@ -427,7 +428,8 @@
 #undef CONFIG_EXAMPLE_WLAN_FAST_CONNECT
 #define CONFIG_EXAMPLE_WLAN_FAST_CONNECT  1
 
-#define ATCMD_VER ATVER_2
+#undef CONFIG_MQTT_EN
+#define CONFIG_MQTT_EN 1
 
 #endif
 

@@ -1,4 +1,3 @@
-
 #include "ameba_soc.h"
 #include "example_entry.h"
 #include "rtl8721d_system.h"

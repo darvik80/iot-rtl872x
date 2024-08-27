@@ -167,7 +167,7 @@
 /*
  * < MQTT Config 
  */
-#undef  CONFIG_MQTT_EN
+#define CONFIG_MQTT_EN 1
 
 /*
  * < Matter Config 

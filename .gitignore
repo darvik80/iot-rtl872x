@@ -1,0 +1,28 @@
+*.d
+*.i
+*.o
+*.su
+*.s
+
+# project build files
+/**/image/
+/**/build/
+
+# build info
+build_info.h
+
+# toolchain
+toolchain/asdk
+toolchain/linux/
+toolchain/cygwin/
+toolchain/darwin/
+
+# menuconfig lxdialog files
+/**/lxdialog/
+/**/config/*.old
+
+# IAR
+*.dep
+*.ewt
+/**/EWARM-RELEASE/Debug/
+image

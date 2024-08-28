@@ -11,6 +11,7 @@ RTL872x firmware with SDK
    |- hpc - source code for main MCU - Cortex-M33
    |- lpc - source code for second MCU - Cortex-M23
 |- toolchain
+   |- asdk - archives with SDK
    |- linux     
    |- windows     
    |- darwin
@@ -42,7 +43,7 @@ Operation flash both MCU
 make sdk-menuconfig
 ```
 
-### Menuconfig for low power MCU, etc for main MCU
+### Menuconfig for low power MCU, etc for second MCU
 ```shell
 make sdk-menuconfig-low
 ```

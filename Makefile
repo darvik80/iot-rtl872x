@@ -1,3 +1,7 @@
+port ?= /dev/cu.usbserial-1130
+erase ?= Disable
+speed ?= 1500000
+
 MAKE := make
 MKDIR := mkdir
 CC := gcc
@@ -26,7 +30,7 @@ ifeq ($(COMPILEOS),$(DARWIN_OS))
 	$(CP) -r tools/darwin/bsp image
 	$(CP) -r tools/darwin/imgtool_flashloader_amebad.bin image
 	$(CP) -r tools/darwin/upload_image_tool_macos image
-	cd image && ./upload_image_tool_macos ../image /dev/cu.usbserial-1130 "{board}" Enable Disable 1500000
+	cd image && ./upload_image_tool_macos ../image ${port} "{board}" Enable Disable ${speed}
 endif
 
 all: build flash

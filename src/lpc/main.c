@@ -221,10 +221,6 @@ int main(void)
 	
 	app_audio_pad_enable();
 
-	//DiagPrintfD("M0U:%d\n", RTIM_GetCount(TIMM05));
-
-	DBG_8195A("Hello World - LP Part");
-
 	//Enable Schedule
 	vTaskStartScheduler();
 }

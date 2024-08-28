@@ -19,24 +19,18 @@ TOOLCHAINDIR := $(shell pwd)
 ifeq ($(COMPILEOS),$(LINUX_OS))
 	ASDK_TOOLCHAIN = $(TOOLCHAINDIR)/linux/asdk-6.4.1/linux/newlib
 	TOOLCHAINDIR_OS = linux
-	TOOLCHAINNAME = asdk-6.4.1-linux-newlib-build-2773-i686.tar.bz2
-	TOOLCHAINURL	= https://github.com/Ameba-AIoT/ameba-toolchain/releases/download/6.4.1/asdk-6.4.1-linux-newlib-build-2773-i686.tar.bz2
+	TOOLCHAINNAME = ameba_d_toolchain_windows-1.0.1.tar.bz2
+	TOOLCHAINURL	= https://code.alibaba-inc.com/logistics-iot/iot-rtl872x-toolchain/raw/0a10ec209eb811e46be902b5cf8bcb3472b4314e/ameba_d_toolchain_windows-1.0.1.tar.bz2
 else ifeq ($(COMPILEOS_CYGWIN),Cygwin)
 	ASDK_TOOLCHAIN = $(TOOLCHAINDIR)/cygwin/asdk-6.4.1/cygwin/newlib
 	TOOLCHAINDIR_OS = cygwin
-	TOOLCHAINNAME = asdk-6.4.1-cygwin-newlib-build-2778-i686.tar.bz2
-	TOOLCHAINURL	= https://github.com/Ameba-AIoT/ameba-toolchain/releases/download/6.4.1/asdk-6.4.1-cygwin-newlib-build-2778-i686.tar.bz2
+	TOOLCHAINNAME = ameba_d_toolchain_linux-1.0.1.tar.bz2
+	TOOLCHAINURL	= https://code.alibaba-inc.com/logistics-iot/iot-rtl872x-toolchain/raw/0a10ec209eb811e46be902b5cf8bcb3472b4314e/ameba_d_toolchain_linux-1.0.1.tar.bz2
 else ifeq ($(COMPILEOS),$(DARWIN_OS))
 	TOOLCHAINDIR_OS = darwin
-	ifeq ($(shell uname -m),x86_64)
-		ASDK_TOOLCHAIN = $(TOOLCHAINDIR)/darwin/asdk-6.5.0
-		TOOLCHAINNAME = asdk-6.5.0-darwin-newlib-build-3078-x86_64.tar.bz2
-		TOOLCHAINURL	= https://github.com/Ameba-AIoT/ameba-toolchain/releases/download/6.5.0/asdk-6.5.0-darwin-newlib-build-3078-x86_64.tar.bz2
-	else
-		ASDK_TOOLCHAIN = $(TOOLCHAINDIR)/darwin/asdk-6.5.0
-		TOOLCHAINNAME = ameba_d_toolchain_macos-1.0.1.tar.bz2
-		TOOLCHAINURL	= https://github.com/ambiot/ambd_arduino/raw/master/Arduino_package/release/ameba_d_toolchain_macos-1.0.1.tar.bz2
-	endif
+	ASDK_TOOLCHAIN = $(TOOLCHAINDIR)/darwin/asdk-6.5.0
+	TOOLCHAINNAME = ameba_d_toolchain_macos-1.0.1.tar.bz2
+	TOOLCHAINURL	= https://code.alibaba-inc.com/logistics-iot/iot-rtl872x-toolchain/raw/0a10ec209eb811e46be902b5cf8bcb3472b4314e/ameba_d_toolchain_macos-1.0.1.tar.bz2
 endif
 
 .PHONY: all clean

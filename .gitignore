@@ -13,7 +13,6 @@
 build_info.h
 
 # toolchain
-toolchain/asdk
 toolchain/linux/
 toolchain/cygwin/
 toolchain/darwin/

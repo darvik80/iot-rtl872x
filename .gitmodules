@@ -1,0 +1,3 @@
+[submodule "toolchain/asdk"]
+	path = toolchain/asdk
+	url = git@gitlab.alibaba-inc.com:logistics-iot/iot-rtl872x-toolchain.git

@@ -9,13 +9,7 @@ CP := cp
 
 .DEFAULT: build
 
-sdk-menuconfig:
-	$(MAKE) -C sdk/high-power-core/asdk menuconfig
-
-sdk-menuconfig-high: sdk-menuconfig
-
-sdk-menuconfig-low:
-	$(MAKE) -C sdk/low-power-core/asdk menuconfig
+all: build flash
 
 build:
 	$(MAKE) -C sdk/low-power-core all
@@ -33,7 +27,16 @@ ifeq ($(COMPILEOS),$(DARWIN_OS))
 	cd image && ./upload_image_tool_macos ../image ${port} "{board}" Enable Disable ${speed}
 endif
 
-all: build flash
+toolchain:
+	$(MAKE) -C toolchain all
+
+sdk-menuconfig:
+	$(MAKE) -C sdk/high-power-core/asdk menuconfig
+
+sdk-menuconfig-high: sdk-menuconfig
+
+sdk-menuconfig-low:
+	$(MAKE) -C sdk/low-power-core/asdk menuconfig
 
 clean:
 	$(MAKE) -C sdk/low-power-core clean
@@ -50,7 +53,7 @@ INC += $(shell find $(DIR_COMPONENT) -type d)
 INC += src/hpc/config
 INC_DIR := $(foreach d, $(INC), -I$d)
 
-.PHONY: all clean flash stub
+.PHONY: all clean flash stub toolchain
 
 stub:
 	$(CC) -c $(SRC) -I$(INC_DIR)

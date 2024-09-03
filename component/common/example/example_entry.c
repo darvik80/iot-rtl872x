@@ -17,6 +17,7 @@
 #if ATCMD_VER == ATVER_2
 #include "flash_api.h"
 #include "device_lock.h"
+#include "spi_atcmd/example_spi_atcmd.h"
 #endif
    
 #if defined(CONFIG_EXAMPLE_MDNS) && CONFIG_EXAMPLE_MDNS

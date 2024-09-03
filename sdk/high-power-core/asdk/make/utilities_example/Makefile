@@ -67,6 +67,7 @@ vpath %.c $(DIRS)
 #                               Source FILE LIST                              #
 #*****************************************************************************#
 CSRC += $(DIR)/example_entry.c
+CSRC += $(DIR)/spi_atcmd/example_spi_atcmd.c
 CSRC += $(DIR)/cm_backtrace/example_cm_backtrace.c
 CSRC += $(DIR)/bcast/example_bcast.c
 CSRC += $(DIR)/eap/example_eap.c
